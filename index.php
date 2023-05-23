@@ -16,5 +16,11 @@ echo $dados->login;
 echo $dados->avatar_url;
 print_r($dados);
 
+$viacep = $client->request(
+    'GET', // tipo da requisição
+    'https://viacep.com.br/ws/01001000/json/' //uri da api
+);
+$infoCep = json_decode($viacep->getBody());
+print_r($infoCep);
 
 ?>
